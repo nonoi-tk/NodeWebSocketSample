@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <title>Socket.IO Test</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+    <script src="/Users/tkakoi/node_modules/socket.io/client-dist/socket.io.js"></script>
+    <script>
+      $(function() {
+        var socket = io.connect('https://beersys-sample.herokuapp.com/web_test');
+
+        socket.on('greeting', function(data, fn) {
+          var answer = confirm(data.message);
+          fn(answer);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Socket.IO Test</h1>
+  </body>
+</html>
